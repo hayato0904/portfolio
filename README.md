@@ -20,8 +20,18 @@ $rails db:create && rails db:migrate
 $rails s -b 0.0.0.0
 ```
 ## カタログ設計
-(https://docs.google.com/spreadsheets/d/1HeF4tUjHs5uRWC3L3XbsL5mtavf1yBFicDYonKb68wM/edit?usp=sharing)
-* How to run the test suite
+https://docs.google.com/spreadsheets/d/1HeF4tUjHs5uRWC3L3XbsL5mtavf1yBFicDYonKb68wM/edit?usp=sharing
+
+## テーブル定義書
+https://docs.google.com/spreadsheets/d/1HeF4tUjHs5uRWC3L3XbsL5mtavf1yBFicDYonKb68wM/edit?usp=sharing
+
+## ワイヤーフレーム
+https://cacoo.com/diagrams/x5RGGDIbU1Byx5Wm/AE0FC
+
+## ER図
+https://cacoo.com/diagrams/UAxMy9KeZErbFJZ7/48651
+![alt text](ER図.png)
+
 
 * Services (job queues, cache servers, search engines, etc.)
 
