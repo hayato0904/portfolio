@@ -32,6 +32,11 @@ https://cacoo.com/diagrams/x5RGGDIbU1Byx5Wm/AE0FC
 https://cacoo.com/diagrams/UAxMy9KeZErbFJZ7/48651
 ![alt text](ER図.png)
 
+## 画面遷移図
+https://cacoo.com/diagrams/gIYfsUyvyE1lyggZ/BA862
+![alt text](画面遷移図.png)
+
+
 
 * Services (job queues, cache servers, search engines, etc.)
 
