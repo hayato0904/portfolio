@@ -1,21 +1,26 @@
 # README
 ## 開発言語
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby2.6.5
+* Rails5.2.6
+## 就業Tremの技術
 
-Things you may want to cover:
+* メッセージ機能
+* お気に入り機能
+## カリキュラム外の技術
 
-* Ruby version
+* cancancan
+## 実行手順
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
+```
+$ git clone git@github.com:hayato0904/portfolio.git
+$ cd portfolio
+$ bundle install
+$rails db:create && rails db:migrate
+$rails s -b 0.0.0.0
+```
+## カタログ設計
+(https://docs.google.com/spreadsheets/d/1HeF4tUjHs5uRWC3L3XbsL5mtavf1yBFicDYonKb68wM/edit?usp=sharing)
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
