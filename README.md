@@ -5,11 +5,11 @@
 * Rails5.2.6
 ## 就業Tremの技術
 
-* メッセージ機能
+* コメント機能
 * お気に入り機能
 ## カリキュラム外の技術
 
-* cancancan
+* ransack
 ## 実行手順
 
 ```
@@ -36,6 +36,7 @@ https://cacoo.com/diagrams/UAxMy9KeZErbFJZ7/48651
 https://cacoo.com/diagrams/gIYfsUyvyE1lyggZ/BA862
 ![alt text](画面遷移図.png)
 
+rails g scaffold Blog name:string email:string content:text
 
 
 * Services (job queues, cache servers, search engines, etc.)
