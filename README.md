@@ -23,7 +23,7 @@ $rails s -b 0.0.0.0
 https://docs.google.com/spreadsheets/d/1HeF4tUjHs5uRWC3L3XbsL5mtavf1yBFicDYonKb68wM/edit?usp=sharing
 
 ## テーブル定義書
-https://docs.google.com/spreadsheets/d/1HeF4tUjHs5uRWC3L3XbsL5mtavf1yBFicDYonKb68wM/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1rgfquKTtPbtorDCt_-yCBR5dVYbVycyMa2ToGSO2rA0/edit#gid=513638561
 
 ## ワイヤーフレーム
 https://cacoo.com/diagrams/x5RGGDIbU1Byx5Wm/AE0FC
