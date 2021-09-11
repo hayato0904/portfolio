@@ -1,0 +1,2 @@
+class Topick < ApplicationRecord
+end
