@@ -3,6 +3,7 @@ class TopicksController < ApplicationController
   end
 
   def new
+  @topick = Topick.new
   end
   
 end
