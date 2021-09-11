@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'topicks/index'
+  get '/topicks', to: 'topicks#index'
   resources :topicks
 end
