@@ -4,9 +4,10 @@
     <tr>
         <th>投稿内容</th>
     </tr>
-    <% @topicks.each do |tipick| %>
+    <% @topicks.each do |topick| %>
     <tr>
-        <td><%= tipick.content %></td>
+        <td><%= topick.content %></td>
+        <td><%= link_to '詳細を確認する', topick_path(topick.id) %></td>
     </tr>
     <% end %>
 </table>

@@ -11,6 +11,11 @@ class TopicksController < ApplicationController
     Topick.create(topick_params)
     redirect_to new_topick_path
   end
+
+def show
+  @topick = Topick.find(params[:id])
+end
+
   private
   def topick_params
     params.require(:topick).permit(:content)
