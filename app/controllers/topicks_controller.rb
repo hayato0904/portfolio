@@ -1,5 +1,5 @@
 class TopicksController < ApplicationController
-  before_action :set_topick, only: [:show, :edit, :update]
+  before_action :set_topick, only: [:show, :edit, :update, :destroy]
   def index
     @topicks = Topick.all
   end
@@ -30,6 +30,11 @@ def update
       render :edit
     end
   end
+
+def destroy
+  @topick.destroy
+  redirect_to topicks_path, notice:"掲示板に投稿したものを削除しました！"
+end
 
   private
   def topick_params
