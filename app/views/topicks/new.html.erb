@@ -1,20 +1,2 @@
-<%= form_with(model: @topick, local: true) do |form| %>
-<% if @topick.errors.any? %>
-
-    <div id="error_explanation">
-        <h2><%= @topick.errors.count %>件のエラーがあります。</h2>
-        <ul>
-        <% @topick.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    </div>
-
-<% end %>
-
-    <div class="topick_content">
-        <%= form.label :content %>
-        <%= form.text_field :content %>
-    </div>
-    <%= form.submit %>
-<% end %>
+<h2>掲示板を作成する</h2>
+<%= render 'form' %>
