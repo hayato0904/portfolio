@@ -1,4 +1,5 @@
 class TopicksController < ApplicationController
+  before_action :set_topick, only: [:show, :edit, :update]
   def index
     @topicks = Topick.all
   end
@@ -36,5 +37,9 @@ def update
   private
   def topick_params
     params.require(:topick).permit(:content)
+  end
+
+  def set_topick
+    @topick = Topick.find(params[:id])
   end
 end
