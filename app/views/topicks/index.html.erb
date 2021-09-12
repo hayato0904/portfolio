@@ -1,0 +1,19 @@
+<h1>お悩み掲示板</h1>
+<p><%= notice %></p>
+<table>
+    <tr>
+        <th>投稿内容</th>
+    </tr>
+    <% @topicks.each do |topick| %>
+    <tr>
+        <td><%= topick.content %></td>
+        <td><%= link_to '掲示板を確認する', topick_path(topick.id) %></td>
+        <td><%= link_to "投稿した掲示板を編集する", edit_topick_path(topick.id), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><%= link_to '投稿した掲示板を削除する', topick_path(topick.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%></td>
+    </tr>
+    <% end %>
+</table>
+
+<%= link_to '掲示板一覧画面に戻る', topicks_path %>
+<%= link_to '新しく掲示板を投稿する', new_topick_path %>
+

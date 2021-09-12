@@ -1,0 +1,19 @@
+<%= form_with(model: @topick, local: true,url: choose_new_or_edit) do |form| %>
+    <% if @topick.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= @topick.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @topick.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+        </div>
+    <% end %>
+    
+    <div class="topick_title">
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+    </div>
+    <%= form.submit %>
+<% end %>
+<%= link_to "掲示板一覧画面にもどる", topicks_path %>
