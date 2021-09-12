@@ -18,15 +18,12 @@ class TopicksController < ApplicationController
   end
 
 def show
-  @topick = Topick.find(params[:id])
 end
 
 def edit
-  @topick = Topick.find(params[:id])
 end
 
 def update
-  @topick = Topick.find(params[:id])
     if @topick.update(topick_params)
       redirect_to topicks_path, notice: "掲示板を編集しました！"
     else
