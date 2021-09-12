@@ -42,6 +42,7 @@ end
 
 def confirm
   @topick = Topick.new(topick_params)
+  render :new if @topick.invalid?
 end
 
   private
