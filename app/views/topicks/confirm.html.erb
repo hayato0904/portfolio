@@ -1,0 +1,6 @@
+<h3>以下の内容で、送信する。</h3>
+<%= form_with(model: @topick, local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <p>本文:<%= @topick.content %></p>
+    <%= form.submit  "登録する" %>
+<% end %>

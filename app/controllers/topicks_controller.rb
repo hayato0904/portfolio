@@ -36,6 +36,10 @@ def destroy
   redirect_to topicks_path, notice:"掲示板に投稿したものを削除しました！"
 end
 
+def confirm
+  @topick = Topick.new(topick_params)
+end
+
   private
   def topick_params
     params.require(:topick).permit(:content)
