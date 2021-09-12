@@ -8,8 +8,8 @@
     <tr>
         <td><%= topick.content %></td>
         <td><%= link_to '掲示板を確認する', topick_path(topick.id) %></td>
-        <td><%= link_to "投稿した掲示板を編集する", edit_topick_path(topick.id) %></td>
-        <td><%= link_to '投稿した掲示板を削除する', topick_path(topick.id), method: :delete %></td>
+        <td><%= link_to "投稿した掲示板を編集する", edit_topick_path(topick.id), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><%= link_to '投稿した掲示板を削除する', topick_path(topick.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%></td>
     </tr>
     <% end %>
 </table>
