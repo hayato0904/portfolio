@@ -8,8 +8,12 @@ class TopicksController < ApplicationController
   end
 
   def create
-    Topick.create(topick_params)
-    redirect_to new_topick_path
+    @topick = Topick.new(topick_params)
+    if @topick.save
+    redirect_to new_topick_path, notice: "掲示板に投稿しました！"
+    else
+      render :new
+    end
   end
 
 def show
