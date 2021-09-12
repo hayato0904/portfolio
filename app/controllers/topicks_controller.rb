@@ -1,5 +1,6 @@
 class TopicksController < ApplicationController
   def index
+    @topicks = Topick.all
   end
 
   def new
