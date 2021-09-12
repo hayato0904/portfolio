@@ -3,4 +3,5 @@
     <%= form.hidden_field :content %>
     <p>本文:<%= @topick.content %></p>
     <%= form.submit  "登録する" %>
+    <%= form.submit "戻る", name: 'back' %>
 <% end %>

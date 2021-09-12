@@ -10,10 +10,14 @@ class TopicksController < ApplicationController
 
   def create
     @topick = Topick.new(topick_params)
-    if @topick.save
-    redirect_to new_topick_path, notice: "掲示板に投稿しました！"
-    else
+    if params[:back]
       render :new
+    else
+      if @topick.save
+        redirect_to new_topick_path, notice: "掲示板に投稿しました！"
+      else
+        render :new
+      end
     end
   end
 
