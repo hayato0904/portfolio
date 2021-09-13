@@ -29,7 +29,6 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener_web'
 end
 
 group :test do
@@ -39,8 +38,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'devise'
-gem 'rexml'
-gem 'devise-i18n'
-gem 'rails_admin', '~> 2.0'
-gem 'cancancan'
