@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  get '/users', to: 'users#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get '/topicks', to: 'topicks#index'
