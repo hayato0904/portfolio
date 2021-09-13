@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get '/topicks', to: 'topicks#index'
   resources :topicks do
     collection do
