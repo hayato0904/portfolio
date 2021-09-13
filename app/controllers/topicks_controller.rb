@@ -11,7 +11,7 @@ class TopicksController < ApplicationController
 
   def create
     @topick = Topick.new(topick_params)
-    @topick.user_id = current_user.id
+    @topick = current_user.topicks.build(topick_params)
     if params[:back]
       render :new
     else
@@ -44,7 +44,7 @@ end
 
 def confirm
   @topick = Topick.new(topick_params)
-  @topick.user_id = current_user.id
+  @topick = current_user.topicks.build(topick_params)
   render :new if @topick.invalid?
 end
 
