@@ -13,6 +13,17 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
       t.timestamps null: false
+
+      t.string :name
+      t.string :email
+      t.integer :gender, default: false, null: false
+      t.integer :administrative_divisions_of_japan
+      t.integer :blood_type
+      t.integer :constellation
+      t.string :self_lntroduction
+      t.string :icon
+      t.string :password_digest
+      t.timestamps
     end
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
