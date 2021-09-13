@@ -1,4 +1,8 @@
-<h1>お悩み掲示板</h1>
+<% if current_user.try(:admin?) %>
+    <h1>管理者権限でのログイン</h1>
+<% else %>
+    <h1>一般ユーザー出のログイン</h1>
+<% end %>
 <p><%= notice %></p>
 <table>
     <tr>
