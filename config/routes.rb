@@ -8,7 +8,15 @@ Rails.application.routes.draw do
     collection do
       post :confirm
     end
+      resources :comments
+    
   end
+
+  # Rails.application.routes.draw do
+  #   resources :topicks do
+  #     resources :comments
+  #   end
+  # end
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
