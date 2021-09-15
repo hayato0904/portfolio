@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
+  # コメントを保存、投稿するためのアクションです。
   def create
-    # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
+    # Topickをパラメータの値から探し出し,Topickに紐づくcommentsとしてbuildします。
     @topick = Topick.find(params[:topick_id])
     @comment = @topick.comments.build(comment_params)
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to blog_path(@topick) }
+        format.js { render :index }
       else
-        format.html { redirect_to blog_path(@topick), notice: '投稿できませんでした...' }
+        format.html { redirect_to topick_path(@topick), notice: '投稿できませんでした...' }
       end
     end
   end
