@@ -18,3 +18,11 @@
     <%= link_to '編集', edit_topick_path(@topick) %> |
     <%= link_to '戻る', topicks_path %>
 </div>
+<%# お気に入り機能 %>
+<% unless @topick.user_id == current_user.id %>
+    <% if @favorite.present? %>
+        <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+        <%= link_to 'お気に入りする', favorites_path(topick_id: @topick.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+<% end %>
