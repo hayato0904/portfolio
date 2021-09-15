@@ -12,12 +12,6 @@ Rails.application.routes.draw do
     
   end
 
-  # Rails.application.routes.draw do
-  #   resources :topicks do
-  #     resources :comments
-  #   end
-  # end
-
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
