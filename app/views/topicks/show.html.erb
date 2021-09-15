@@ -1,2 +1,20 @@
 <h1>掲示板詳細画面</h1>
 <p>内容: <%= @topick.content %></p>
+
+<h1>コメント機能<h1>
+<div class="container">
+    <p id="notice"><%= notice %></p>
+    <div class="topick-text">
+    <p><strong>内容</strong>：<%= @topick.content %></p>
+</div>
+    <p>コメント一覧（ここから下の内容が重要）</p>
+    <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+    <div id="comments_area">
+    <!-- 投稿されたコメント一覧をトピックの詳細ページに表示するためのrender -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, topick: @topick } %>
+</div>
+    <!-- コメント入力欄をトピックの詳細ページに表示するためのrender -->
+    <%= render partial: 'comments/form', locals: { comment: @comment, topick: @topick } %>
+    <%= link_to '編集', edit_topick_path(@topick) %> |
+    <%= link_to '戻る', topicks_path %>
+</div>

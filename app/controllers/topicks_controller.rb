@@ -23,6 +23,8 @@ class TopicksController < ApplicationController
   end
 
 def show
+  @comments = @topick.comments
+  @comment = @topick.comments.build
 end
 
 def edit
