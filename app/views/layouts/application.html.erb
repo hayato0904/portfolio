@@ -10,6 +10,13 @@
   </head>
 
   <body>
+  <header>
+      <ul>
+        <li><a href="#">ゲストログイン</a></li>
+        <li><a href="#">管理者ログイン</a></li>
+        <li><a href="#">ログイン</a></li>
+      </ul>
+    </header>
   <% if user_signed_in? %>
       <%= link_to "ブログ投稿", topicks_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -26,5 +33,11 @@
     <% end %>
     
     <%= yield %>
+
+    <footer>
+      <p>アプリ名 Felling</p>
+      <p>あなたのお悩み解決します。</p>
+    </footer>
+
   </body>
 </html>
