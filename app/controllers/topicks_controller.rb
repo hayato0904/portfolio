@@ -12,7 +12,7 @@ class TopicksController < ApplicationController
   def create
     @topick = Topick.new(topick_params)
     @topick = current_user.topicks.build(topick_params)
-    if params[:back]
+    if topick_params[:back]
       render :new
     else
       if @topick.save
