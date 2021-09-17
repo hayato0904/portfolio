@@ -15,7 +15,7 @@
         <li><a href="#">ゲストログイン</a></li>
         <li><a href="#">管理者ログイン</a></li>
         <% if user_signed_in? %>
-          <li><%= link_to "ブログ投稿", topicks_path %></li>
+          <li><%= link_to "掲示板に投稿する", topicks_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "新規登録", new_user_registration_path %></li>
