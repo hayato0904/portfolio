@@ -9,9 +9,9 @@ class TopicksController < ApplicationController
   end
 
   def create
-    @topick = Topick.new(topick_params)
+    # @topick = Topick.new(topick_params)
     @topick = current_user.topicks.build(topick_params)
-    if params[:back]
+    if topick_params[:back]
       render :new
     else
       if @topick.save
@@ -25,6 +25,7 @@ class TopicksController < ApplicationController
 def show
   @comments = @topick.comments
   @comment = @topick.comments.build
+  @favorite = current_user.favorites.find_by(topick_id: @topick.id)
 end
 
 def edit

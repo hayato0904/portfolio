@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_001406) do
+ActiveRecord::Schema.define(version: 2021_09_15_102802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2021_09_15_001406) do
     t.index ["topick_id"], name: "index_comments_on_topick_id"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "topick_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topick_id"], name: "index_favorites_on_topick_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "topicks", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -32,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_09_15_001406) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -51,12 +60,13 @@ ActiveRecord::Schema.define(version: 2021_09_15_001406) do
     t.integer "constellation"
     t.string "self_lntroduction"
     t.string "icon"
-    t.string "password_digest"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "comments", "topicks"
+  add_foreign_key "favorites", "topicks"
+  add_foreign_key "favorites", "users"
   add_foreign_key "topicks", "users"
 end

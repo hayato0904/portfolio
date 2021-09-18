@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites, only: [:create, :destroy]
   get '/users', to: 'users#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
@@ -15,5 +16,4 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
-
 end

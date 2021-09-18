@@ -4,12 +4,39 @@
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <header>
+      <ul>
+        <li><a href="#">ゲストログイン</a></li>
+        <li><a href="#">管理者ログイン</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "掲示板に投稿する", topicks_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </header>
+
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+    
     <%= yield %>
+
+    <footer>
+      <p>アプリ名 Felling</p>
+      <p>あなたのお悩み解決します。</p>
+    </footer>
+
   </body>
 </html>
