@@ -1,4 +1,9 @@
-<h1>お悩み掲示板</h1>
+<div class="container">
+<% if current_user.try(:admin?) %>
+    <h1>管理者権限でのログイン</h1>
+<% else %>
+    <h1>一般ユーザーでのログイン</h1>
+<% end %>
 <p><%= notice %></p>
 <table>
     <tr>
@@ -16,3 +21,4 @@
 
 <%= link_to '掲示板一覧画面に戻る', topicks_path %>
 <%= link_to '新しく掲示板を投稿する', new_topick_path %>
+</div>

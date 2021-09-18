@@ -5,16 +5,25 @@
 <div class="container">
     <p id="notice"><%= notice %></p>
     <div class="topick-text">
-    <p><strong>内容</strong>：<%= @topick.content %></p>
-</div>
-    <p>コメント一覧（ここから下の内容が重要）</p>
-    <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+        <p><strong>内容</strong>：<%= @topick.content %></p>
+    </div>
+        <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
     <div id="comments_area">
-    <!-- 投稿されたコメント一覧をトピックの詳細ページに表示するためのrender -->
-    <%= render partial: 'comments/index', locals: { comments: @comments, topick: @topick } %>
-</div>
-    <!-- コメント入力欄をトピックの詳細ページに表示するためのrender -->
-    <%= render partial: 'comments/form', locals: { comment: @comment, topick: @topick } %>
-    <%= link_to '編集', edit_topick_path(@topick) %> |
-    <%= link_to '戻る', topicks_path %>
+        <!-- 投稿されたコメント一覧をトピックの詳細ページに表示するためのrender -->
+        <%= render partial: 'comments/index', locals: { comments: @comments, topick: @topick } %>
+    </div>
+        <!-- コメント入力欄をトピックの詳細ページに表示するためのrender -->
+        <%= render partial: 'comments/form', locals: { comment: @comment, topick: @topick } %>
+        <%= link_to '編集', edit_topick_path(@topick) %> |
+        <%= link_to '戻る', topicks_path %>
+
+<%# お気に入り機能 %>
+<% unless @topick.user_id == current_user.id %>
+    <% if @favorite.present? %>
+        <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+        <%= link_to 'お気に入りする', favorites_path(topick_id: @topick.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+<% end %>
+
 </div>
