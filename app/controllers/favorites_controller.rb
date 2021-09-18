@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def create
-    favorite = current_user.favorites.create(topick_id: params[:topik_id])
+    favorite = current_user.favorites.create(topick_id: params[:topick_id])
     redirect_to topicks_path, notice: "#{favorite.topick.user.name}さんの投稿をお気に入り登録しました"
   end
   def destroy

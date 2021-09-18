@@ -18,7 +18,7 @@
         <%= link_to '戻る', topicks_path %>
 
 <%# お気に入り機能 %>
-<% if @topick.user_id == current_user.id %>
+<% unless @topick.user_id == current_user.id %>
     <% if @favorite.present? %>
         <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
     <% else %>
