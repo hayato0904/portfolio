@@ -1,6 +1,7 @@
 <div class="container">
 <% if current_user.try(:admin?) %>
     <h1>管理者権限でのログイン</h1>
+    <%= link_to '管理画面へ', rails_admin_path %>
 <% else %>
     <h1>一般ユーザーでのログイン</h1>
 <% end %>
