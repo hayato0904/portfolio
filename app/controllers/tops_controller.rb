@@ -8,4 +8,16 @@ class TopsController < ApplicationController
     sign_in user
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
+
+  def admin_guest_sign_in
+    binding.pry
+    user = User.find_or_create_by!(email: 'adminguest@example.com', admin: 'true') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
+    end
+    sign_in user
+    redirect_to root_path, notice: '管理者ゲストユーザーとしてログインしました。'
+  end
+
 end
