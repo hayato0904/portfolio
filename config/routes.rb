@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/tops/guest_sign_in', to: 'tops#guest_sign_in'
   root to: 'tops#index'
   resources :favorites, only: [:create, :destroy]
   get '/users', to: 'users#index'
