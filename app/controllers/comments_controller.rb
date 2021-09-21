@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_topick, only: [:create, :edit, :update]
-  # コメントを保存、投稿するためのアクションです。
+  # コメントを保存、投稿するためのアクションです
   def create
     # Topickをパラメータの値から探し出し,Topickに紐づくcommentsとしてbuildします。
     @topick = Topick.find(params[:topick_id])
