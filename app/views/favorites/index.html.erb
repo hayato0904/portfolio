@@ -1,0 +1,13 @@
+<div class="container">
+<table>
+    <tr>
+        <th>投稿内容</th>
+    </tr>
+    <% @favorites.each do |favorite| %>
+        <tr>
+            <td><%= favorite.topick.content %></td>
+        </tr>
+        <% end %>
+        </table>
+        <%= link_to '掲示板一覧画面に戻る', topicks_path %>
+        </div>
