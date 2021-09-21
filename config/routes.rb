@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post '/tops/guest_sign_in', to: 'tops#guest_sign_in'
   post '/tops/admin_guest_sign_in', to: 'tops#admin_guest_sign_in'
   root to: 'tops#index'
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy, :index]
   get '/users', to: 'users#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
