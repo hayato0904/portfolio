@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     end
       resources :comments
     
+      resources :users do
+        collection do
+          get 'search'
+        end
+      end
+
   end
 
   if Rails.env.development?
