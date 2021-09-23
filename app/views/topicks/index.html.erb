@@ -8,10 +8,14 @@
 <p><%= notice %></p>
 <table>
     <tr>
+        <th>名前<th>
+    </tr>
+    <tr>
         <th>投稿内容</th>
     </tr>
     <% @topicks.each do |topick| %>
     <tr>
+        <td><%= topick.user.name %></td>
         <td><%= topick.content %></td>
         <td><%= link_to '掲示板を確認する', topick_path(topick.id) %></td>
         <%# <% if 掲示板がログインしているユーザーで作成されたか？ %>
@@ -22,6 +26,13 @@
     </tr>
     <% end %>
 </table>
+
+<h1>ユーザー名検索</h1>
+    <%= search_form_for @q, url: topicks_path do |f| %>
+    <%= f.label :name, 'ユーザー名' %>
+    <%= f.search_field :user_name_cont %> <br>
+    <%= f.submit '検索' %> <br> <%= sort_link(@q, :name, "Name_sort") %> 
+<% end %>
 
 <%= link_to '掲示板一覧画面に戻る', topicks_path %>
 <%= link_to '新しく掲示板を投稿する', new_topick_path %>

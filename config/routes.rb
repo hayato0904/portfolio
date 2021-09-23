@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get '/topicks', to: 'topicks#index'
+
   resources :topicks do
     collection do
       post :confirm
     end
       resources :comments
-    
   end
 
   if Rails.env.development?
