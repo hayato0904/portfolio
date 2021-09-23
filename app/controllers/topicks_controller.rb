@@ -2,7 +2,9 @@ class TopicksController < ApplicationController
   before_action :set_topick, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   def index
-    @topicks = Topick.all
+    # @topicks = Topick.all
+    @q = Topick.ransack(params[:q]) 
+    @topicks = @q.result(distinct: true)
   end
 
   def new
