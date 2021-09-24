@@ -1,5 +1,6 @@
 <%= form_with(model: @topick, local: true,url: choose_new_or_edit) do |form| %>
     <% if @topick.errors.any? %>
+    <%# <%= binding.pry %> %>
         <div id="error_explanation">
             <h2><%= @topick.errors.count %>件のエラーがあります。</h2>
         <ul>
