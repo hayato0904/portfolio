@@ -8,7 +8,7 @@ class TopicksController < ApplicationController
   end
 
   def new
-  @topick = Topick.new
+    @topick = Topick.new
   end
 
   def create
@@ -35,12 +35,12 @@ def edit
 end
 
 def update
-    if @topick.update(topick_params)
-      redirect_to topicks_path, notice: "掲示板を編集しました！"
-    else
-      render :edit
-    end
+  if @topick.update(topick_params)
+    redirect_to topicks_path, notice: "掲示板を編集しました！"
+  else
+    render :edit
   end
+end
 
 def destroy
   @topick.destroy
