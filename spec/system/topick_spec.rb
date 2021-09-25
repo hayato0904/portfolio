@@ -28,7 +28,6 @@ RSpec.describe 'タスク管理機能', type: :system do
   describe '掲示板編集機能' do
     context '掲示板を編集した場合' do
       it '編集したものが表示される' do
-
         visit topicks_path
         task_td = all('tr td')
         #binding.irb
@@ -39,6 +38,20 @@ RSpec.describe 'タスク管理機能', type: :system do
         fill_in 'topick[content]', with: 'あいうえお'
         click_on '更新する'
         expect(page).to have_content '掲示板を編集しました'
+      end
+    end
+  end
+
+  describe '掲示板削除機能' do
+    context '掲示板を削除した場合' do
+      it '掲示板が削除される' do
+        visit topicks_path
+        task_td = all('tr td')
+        #binding.irb
+        task_td[4].click
+        page.driver.browser.switch_to.alert.accept
+        #all('tr td')[4].click
+        expect(page).to have_content '掲示板に投稿したものを削除しました！'
       end
     end
   end
