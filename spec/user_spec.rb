@@ -40,6 +40,16 @@ RSpec.describe 'ユーザー機能', type: :system do
     end
   end
 
+  describe 'ユーザー管理者ゲストログイン機能' do
+    context 'ユーザーが管理者ゲストログインをした場合' do
+      it 'ユーザーが管理者ゲストログインできる' do
+        visit root_path
+        click_on '管理者ゲストログイン'
+        expect(page).to have_content '管理者ゲストユーザーとしてログインしました。'
+      end
+    end
+  end
+
 
 end
 
