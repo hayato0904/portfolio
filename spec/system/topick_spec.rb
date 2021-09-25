@@ -11,6 +11,7 @@ RSpec.describe 'タスク管理機能', type: :system do
     all("input")[3].click
     expect(page).to have_content 'ログインしました'  
   end
+
   describe '掲示板投稿機能' do
     context '掲示板に投稿した場合' do
       it '投稿したものが表示される' do
@@ -23,4 +24,23 @@ RSpec.describe 'タスク管理機能', type: :system do
       end
     end
   end
+
+  describe '掲示板編集機能' do
+    context '掲示板を編集した場合' do
+      it '編集したものが表示される' do
+
+        visit topicks_path
+        task_td = all('tr td')
+        #binding.irb
+        task_td[3].click
+        page.driver.browser.switch_to.alert.accept
+        #all('tr td')[4].click
+
+        fill_in 'topick[content]', with: 'あいうえお'
+        click_on '更新する'
+        expect(page).to have_content '掲示板を編集しました'
+      end
+    end
+  end
+
 end
