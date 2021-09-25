@@ -56,4 +56,19 @@ RSpec.describe 'タスク管理機能', type: :system do
     end
   end
 
+  describe 'コメント機能' do
+    context 'コメントをした場合' do
+      it 'コメントが画面にある' do
+        visit topicks_path
+        task_td = all('tr td')
+        #binding.irb
+        task_td[2].click
+        fill_in 'comment[content]', with: 'あいうえお'
+        click_on '登録する'
+        #all('tr td')[4].click
+        expect(page).to have_content 'あいうえお'
+      end
+    end
+  end
+
 end
