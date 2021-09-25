@@ -30,5 +30,16 @@ RSpec.describe 'ユーザー機能', type: :system do
     end
   end
 
+  describe 'ユーザーゲストログイン機能' do
+    context 'ユーザーがゲストログインをした場合' do
+      it 'ユーザーがゲストログインできる' do
+        visit root_path
+        click_on 'ゲストログイン'
+        expect(page).to have_content 'ゲストユーザーとしてログインしました。'
+      end
+    end
+  end
+
+
 end
 
