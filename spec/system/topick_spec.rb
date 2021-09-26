@@ -106,9 +106,11 @@ RSpec.describe 'タスク管理機能', type: :system do
         click_on 'コメント削除'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content ''
-
       end
     end
   end
+
+  
+
 
 end

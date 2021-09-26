@@ -50,6 +50,33 @@ RSpec.describe 'ユーザー機能', type: :system do
     end
   end
 
+  describe '他人の投稿は編集できない機能' do
+    context '他の人が投稿した場合は' do
+      it '編集できない' do
+        visit new_user_session_path
+        fill_in 'user[email]', with: 'foo@foo.com'
+        fill_in 'user[password]', with: 'foofoo'
+        all("input")[3].click
+        click_on '掲示板に投稿する'
+        click_on '新しく掲示板を投稿する'
+        binding.irb
+        fill_in 'topick[content]', with: 'さしすせそ'
+        click_on '登録する'
+        click_on '登録する'
+        click_on '掲示板一覧画面にもどる'
+        
+        click_on 'ログアウト'
+        click_on 'ログイン'
+        fill_in 'user[email]', with: 'bar@bar.com'
+        fill_in 'user[password]', with: 'barbar'
+        all("input")[3].click
+        click_on '掲示板に投稿する'
+        
+        expect(page).not_to have_content '掲示板を編集する'
+      end
+    end
+  end
+
 
 end
 
