@@ -59,7 +59,6 @@ RSpec.describe 'ユーザー機能', type: :system do
         all("input")[3].click
         click_on '掲示板に投稿する'
         click_on '新しく掲示板を投稿する'
-        binding.irb
         fill_in 'topick[content]', with: 'さしすせそ'
         click_on '登録する'
         click_on '登録する'
