@@ -81,21 +81,34 @@ RSpec.describe 'タスク管理機能', type: :system do
         # これから編集したいコメントを投稿する ==================
         fill_in 'comment[content]', with: 'あいうえお'
         click_on '登録する'
-        
         # 上で投稿したコメントを編集していく ====================
         click_on 'コメント編集'
-
         # textarea = all('textarea').first # 今回は入力ボックスが複数あるため，fill_inは使えないみたい
         # fill_in textarea, with: 'かきくけこ' # 今回は入力ボックスが複数あるため，fill_inは使えないみたい
-
         comment_edit = all("textarea")[0]
         comment_edit.set("かきくけこ") # fill_inが使えない時，要素に対して.set("入力したい文字列")をすることで入力可能
         click_on '更新する'
-
         expect(page).to have_content 'コメントが編集されました'
       end
     end
   end
 
+  describe 'コメント削除機能' do
+    context 'コメントを削除した場合' do
+      it 'コメントが削除したものに変更される' do
+        visit topicks_path
+        task_td = all('tr td')
+        task_td[2].click
+        # これから削除したいコメントを投稿する ==================
+        fill_in 'comment[content]', with: 'あいうえお'
+        click_on '登録する'
+        # 上で投稿したコメントを削除していく ====================
+        click_on 'コメント削除'
+        page.driver.browser.switch_to.alert.accept
+        expect(page).to have_content ''
+
+      end
+    end
+  end
 
 end
