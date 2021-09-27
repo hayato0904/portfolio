@@ -20,4 +20,11 @@ module Portfolio
   end
 end
 
+config.action_controller.default_protect_from_forgery = false
+class ApplicationController < ActionController::Base
+  # protect_from_forgery に with オプションを渡さない場合は with: :null_session と同等
+  protect_from_forgery
+end
+
+
 
