@@ -1,13 +1,13 @@
 require 'rails_helper'
 RSpec.describe 'タスク管理機能', type: :system do
   before do
-    FactoryBot.create(:topick)
+    # FactoryBot.create(:topick)
     # FactoryBot.create(:user)
     FactoryBot.create(:user2)
     FactoryBot.create(:user3)
     visit new_user_session_path
-    fill_in 'user[email]', with: 'foo@foo.com'
-    fill_in 'user[password]', with: 'foofoo'
+    fill_in 'user[email]', with: 'bar@bar.com'
+    fill_in 'user[password]', with: 'barbar'
     all("input")[3].click
     expect(page).to have_content 'ログインしました'  
   end
@@ -30,8 +30,8 @@ RSpec.describe 'タスク管理機能', type: :system do
       it '編集したものが表示される' do
         visit topicks_path
         task_td = all('tr td')
-        #binding.irb
-        task_td[3].click
+        # binding.irb
+        task_td['#edit_0'].click
         page.driver.browser.switch_to.alert.accept
         #all('tr td')[4].click
 
