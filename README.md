@@ -23,6 +23,7 @@ $ git clone git@github.com:hayato0904/portfolio.git
 $ cd portfolio
 $ bundle install
 $rails db:create && rails db:migrate
+$rails assets:precompile
 $rails s -b 0.0.0.0
 ```
 ## カタログ設計
