@@ -1,11 +1,11 @@
 <div class="container">
-<table>
+<table class = "table table-condensed">
     <tr>
-        <th>投稿内容</th>
+        <th class= "active">投稿内容</th>
     </tr>
     <% @favorites.each do |favorite| %>
         <tr>
-            <td><%= favorite.topick.content %></td>
+            <td class = "success"><%= favorite.topick.content %></td>
         </tr>
         <% end %>
         </table>
