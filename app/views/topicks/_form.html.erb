@@ -10,11 +10,19 @@
         </ul>
         </div>
     <% end %>
-    
-    <div class="topick_title">
+
+<%# <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div> %>
+
+    <div class="topick_title form-group">
         <%= form.label :content %>
-        <%= form.text_field :content %>
+        <%= form.text_field :content,class:"form-control",placeholder:"文字を入力してください" %>
     </div>
-    <%= form.submit %>
+    <%# <%= form.submit %>
+    <input class="btn btn-default" type="submit" value="登録する">
 <% end %>
+</form>
 <%= link_to "掲示板一覧画面にもどる", topicks_path %>
