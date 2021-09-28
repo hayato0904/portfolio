@@ -11,7 +11,7 @@ class TopsController < ApplicationController
       # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
     end
     sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to topicks_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 
   def admin_guest_sign_in
@@ -26,7 +26,7 @@ class TopsController < ApplicationController
       # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
     end
     sign_in user
-    redirect_to root_path, notice: '管理者ゲストユーザーとしてログインしました。'
+    redirect_to topicks_path, notice: '管理者ゲストユーザーとしてログインしました。'
   end
 
 end
