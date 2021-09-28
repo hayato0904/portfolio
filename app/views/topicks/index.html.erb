@@ -3,40 +3,46 @@
     <h1>管理者権限でのログイン</h1>
     <%= link_to '管理画面へ', rails_admin_path %>
 <% else %>
-    <h1>一般ユーザーでのログイン</h1>
+    <h1 class="page-header">一般ユーザーでのログイン</h1>
 <% end %>
 <p><%= notice %></p>
 <div class="main">
-<table>
-    <tr>
-        <th>名前</th>
-        <th>投稿内容</th>
 
+<h1>ユーザー名検索</h1>
+    <%= search_form_for @q, url: topicks_path do |f| %>
+    <%= f.label :name, '名前を検索' %>
+    <%= f.search_field :user_name_cont %> <br>
+    <%= f.submit '検索' %> 
+<% end %>
+
+<table class = "table table-condensed">
+<%# テーブルのデザインだから、tableタグで囲まないといけない %>
+    <tr>
+        <th class= "active">名前</th>
+        <th class = "success">投稿内容</th>
+        <th class = "info">投稿を確認</th>
+        <th class = "warning">自分の投稿を編集</th>
+        <th class = "danger">自分の投稿を削除</th>
     </tr>
     
     <% @topicks.each do |topick| %>
     <tr>
-        <td><%= topick.user.name %></td>
-        <td><%= topick.content %></td>
-        <td><%= link_to '掲示板を確認する', topick_path(topick.id) %></td>
+        <td class = "active"><%= topick.user.name %></td>
+        <td class = "success"><%= topick.content %></td>
+        <td class = "info"><%= link_to '掲示板を確認する', topick_path(topick.id) %></td>
         <%# <% if 掲示板がログインしているユーザーで作成されたか？ %>
-        <% if current_user == topick.user %>
-            <%# <td><%= button type="button" class="btn btn-primary">Primary</button> =%></td> %>
-            <td><%= link_to "投稿した掲示板を編集する", edit_topick_path(topick.id), data: { confirm: '本当に編集していいですか？' } %></td>
-            <td><%= link_to '投稿した掲示板を削除する', topick_path(topick.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%></td>
-        <% end %>
+        <td class = "warning"><% if current_user == topick.user %>
+            <%= link_to "投稿した掲示板を編集する", edit_topick_path(topick.id), data: { confirm: '本当に編集していいですか？' } %>
+        <% end %></td>
+        <td class = "danger"><% if current_user == topick.user %>
+            <%= link_to '投稿した掲示板を削除する', topick_path(topick.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%>
+        <% end %></td>
     </tr>
     <% end %>
 </table>
 </div>
 
-<h1>ユーザー名検索</h1>
-    <%= search_form_for @q, url: topicks_path do |f| %>
-    <%= f.label :name, 'ユーザー名' %>
-    <%= f.search_field :user_name_cont %> <br>
-    <%= f.submit '検索' %> 
-<% end %>
-
+<%# <button type="button" class="btn btn-primary btn-lg active">Primary button</button> %>
 <%= link_to '掲示板一覧画面に戻る', topicks_path %>
 <%= link_to '新しく掲示板を投稿する', new_topick_path %>
 <%= link_to '自分がお気に入りにしたものを見つける。', favorites_path %>
