@@ -11,7 +11,7 @@ module Portfolio
     config.generators do |g|
 
 
-      config.action_controller.default_protect_from_forgery = false
+      # config.action_controller.default_protect_from_forgery = false
 
       g.test_framework :rspec,
                       model_specs: true,
@@ -24,10 +24,10 @@ module Portfolio
   end
 end
 
-class ApplicationController < ActionController::Base
-  # protect_from_forgery に with オプションを渡さない場合は with: :null_session と同等
-  protect_from_forgery
-end
+# class ApplicationController < ActionController::Base
+#   # protect_from_forgery に with オプションを渡さない場合は with: :null_session と同等
+#   protect_from_forgery
+# end
 
 
 
