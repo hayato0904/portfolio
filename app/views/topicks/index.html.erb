@@ -1,9 +1,9 @@
 <div class="container">
 <% if current_user.try(:admin?) %>
-    <h1>管理者権限でのログイン</h1>
+    <p>管理者権限でのログイン</p>
     <%= link_to '管理画面へ', rails_admin_path %>
 <% else %>
-    <h1 class="page-header">一般ユーザーでのログイン</h1>
+    <p class="page-header">一般ユーザーでのログイン</p>
 <% end %>
 <p><%= notice %></p>
 <div class="main">

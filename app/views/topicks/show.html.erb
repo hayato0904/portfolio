@@ -23,9 +23,12 @@
     <tr>
         <td class = "info">
             <!-- コメント入力欄をトピックの詳細ページに表示するためのrender -->
-            <%= render partial: 'comments/form', locals: { comment: @comment, topick: @topick } %>
-            <%= link_to '編集', edit_topick_path(@topick) %> |
-            <%= link_to '戻る', topicks_path %>
+
+                <%= render partial: 'comments/form', locals: { comment: @comment, topick: @topick } %>
+<% if current_user == @topick.user %>
+                <%= link_to '編集', edit_topick_path(@topick) %>
+                <% end %>
+                <%= link_to '戻る', topicks_path %>          
         </td>
     </tr>
 
