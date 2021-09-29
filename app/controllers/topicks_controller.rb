@@ -32,6 +32,11 @@ def show
 end
 
 def edit
+  if @topick.user == current_user
+    render "edit"
+  else
+    redirect_to topicks_path
+  end
 end
 
 def update
