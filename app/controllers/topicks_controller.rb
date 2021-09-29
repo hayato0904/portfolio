@@ -18,7 +18,7 @@ class TopicksController < ApplicationController
       render :new
     else
       if @topick.save
-        redirect_to new_topick_path, notice: "掲示板に投稿しました！"
+        redirect_to topicks_path, notice: "掲示板に投稿しました！"
       else
         render :new
       end
