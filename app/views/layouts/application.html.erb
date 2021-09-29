@@ -13,7 +13,7 @@
   <header>
       <ul>
         <% if user_signed_in? %>
-          <li><%= link_to "掲示板に投稿する", topicks_path %></li>
+          <li><%= link_to "投稿一覧", topicks_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'ゲストログイン', tops_guest_sign_in_path, method: :post %></li>
