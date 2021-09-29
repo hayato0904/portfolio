@@ -17,5 +17,19 @@ RSpec.describe Topick, type: :model do
         expect(topick).to be_invalid
       end
     end
+
+      context '名前がある場合' do
+        it '値が登録される' do
+          topick = Topick.new(content: '七味唐辛子')
+          expect(topick).not_to be_valid
+        end
+      end
+
+      context '名前がある場合' do
+        it '値が登録される' do
+          topick = Topick.new(content: '1 * 255')
+          expect(topick).not_to be_valid
+        end
+      end
   end
 end

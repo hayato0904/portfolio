@@ -36,7 +36,7 @@ RSpec.describe 'タスク管理機能', type: :system do
         #all('tr td')[4].click
 
         fill_in 'topick[content]', with: 'あいうえお'
-        click_on '更新する'
+        click_on '登録する'
         expect(page).to have_content '掲示板を編集しました'
       end
     end
