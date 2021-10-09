@@ -8,7 +8,6 @@
 <p><%= notice %></p>
 <div class="main">
 <div class="alert alert-success" role="alert">Fellingにようこそ。まずは掲示板に投稿をしてみましょう。「新しく掲示板を投稿する」をクリックしてください。すべてはそこから始まります。</div>
-<h1>ユーザー名検索</h1>
     <%= search_form_for @q, url: topicks_path do |f| %>
     <%= f.label :name, '名前を検索' %>
     <%= f.search_field :user_name_cont %> <br>
@@ -46,4 +45,6 @@
 <%= link_to '掲示板一覧画面に戻る', topicks_path %>
 <%= link_to '新しく掲示板を投稿する', new_topick_path %>
 <%= link_to '自分がお気に入りにしたものを見つける。', favorites_path %>
+<%= link_to '自分のプロフィール画像を設定する', feeds_path %>
+
 </div>

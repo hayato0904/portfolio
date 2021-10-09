@@ -11,17 +11,17 @@
         </div>
     <% end %>
 
-<%# <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div> %>
-
     <div class="topick_title form-group">
         <%= form.label :content %>
-        <%= form.text_field :content,class:"form-control",placeholder:"文字を入力してください" %>
+        <%= form.text_area :content,class:"form-control",rows:"20",placeholder:"文字を入力してください" %>
     </div>
+    <%# 検証ツールで作られたものを
+    サンプルをつけながら、理解する
+    erbのruby独特のやつで自分がどうやって理解するか。そのまま再現できるか。
+    flexboxを調べる。 %>
     <%# <%= form.submit %>
+
+    <%# サンプルよくわからん。 %>
     <input class="btn btn-default" type="submit" value="登録する">
 <% end %>
 </form>
