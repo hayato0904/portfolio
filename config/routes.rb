@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   post '/tops/admin_guest_sign_in', to: 'tops#admin_guest_sign_in'
   root to: 'tops#index'
   resources :favorites, only: [:create, :destroy, :index]
+  resources :users
   get '/users', to: 'users#index'
-  get '/users/show', to: 'users#show'  # 追加したけど違うかも
+  # get '/users/show', to: 'users#show'  # 追加したけど違うかも
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get '/topicks', to: 'topicks#index'
