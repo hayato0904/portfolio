@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_10_06_164732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "image"
     t.integer "gender", default: 0, null: false
     t.integer "administrative_divisions_of_japan"
     t.integer "blood_type"

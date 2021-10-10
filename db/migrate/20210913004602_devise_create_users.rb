@@ -15,6 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.timestamps null: false
 
       t.string :name
+      t.string :image
       t.integer :gender, default: false, null: false
       t.integer :administrative_divisions_of_japan
       t.integer :blood_type

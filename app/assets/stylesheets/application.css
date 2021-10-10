@@ -18,14 +18,13 @@
 html {
     min-height: 100%;
     position: relative;/*←相対位置*/
-    padding-bottom: 120px;/*←footerの高さ*/
 }
 
 
 
 footer {
     width: 100%;
-    background-color:#B4ECEC;
+    background-color:#b8ebf3;
     padding: 0px 0 10px 0;
     color: 000000;
     margin: auto;
