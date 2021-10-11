@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path, notice: "プロフィールを更新しました！"
     else
@@ -50,3 +51,5 @@ class UsersController < ApplicationController
   end
 
 end
+
+# リファクタ必須汚すぎる
