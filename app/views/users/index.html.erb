@@ -5,9 +5,11 @@
         <th>内容</th>
     </tr>
     <% @user.each do |user| %>
+    <%# @usersだとエラーが起きた。@userにしないといけない。 %>
     <tr>
         <td><%= user.name %></td>
         <td><%= user.image %></td>
+        <td><%= link_to '詳細を確認する', user_path(user.id) %></td>
     </tr>
     <% end %>
 </table>
