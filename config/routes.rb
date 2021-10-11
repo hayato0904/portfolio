@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'users/show'
-  resources :feeds
   post '/tops/guest_sign_in', to: 'tops#guest_sign_in'
   post '/tops/admin_guest_sign_in', to: 'tops#admin_guest_sign_in'
   root to: 'tops#index'
