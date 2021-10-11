@@ -14,5 +14,58 @@
     <% end %>
 </table>
 
+
+
+
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>画像アイコン</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.each do |user| %>
+      <tr>
+        <td><%= user.image %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: '画像アイコンを削除しますがよろしいでしょうか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'ユーザーのプロフィール作成画面に行く', new_user_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%= link_to 'プロフィール画面に戻る', users_path %>
 <%= link_to 'マイページ編集画面に行く', new_user_path %>
