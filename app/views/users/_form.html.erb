@@ -12,9 +12,19 @@
         </div>
     <% end %>
 
+<div class="field form-group">
+    <%= form.label :name %><br />
+    <%= form.text_field :name,class:"form-control",placeholder:"名前を入力してください", autofocus: true, autocomplete: "name" %>
+  </div>
+
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :self_lntroduction %><br />
+    <%= form.text_field :self_lntroduction,class:"form-control",placeholder:"自己紹介を入力してください", autofocus: true, autocomplete: "self_lntroduction" %>
   </div>
 
   <div class="actions">

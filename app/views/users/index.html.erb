@@ -1,27 +1,4 @@
-<h1>ブログ一覧</h1>
-<table>
-    <tr>
-        <th>タイトル</th>
-        <th>内容</th>
-    </tr>
-    <% @user.each do |user| %>
-    <%# @usersだとエラーが起きた。@userにしないといけない。 %>
-    <tr>
-        <td><%= user.name %></td>
-        <td><%= user.image %></td>
-        <td><%= link_to '詳細を確認する', user_path(user.id) %></td>
-    </tr>
-    <% end %>
-</table>
-
-
-
-
-
-
-
-
-
+<h1>マイページ一覧</h1>
 
 <p id="notice"><%= notice %></p>
 
@@ -36,6 +13,7 @@
   <tbody>
     <% @user.each do |user| %>
       <tr>
+      <td><%= user.name %></td>
         <td><%= user.image %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -47,25 +25,4 @@
 
 <br>
 
-<%= link_to 'ユーザーのプロフィール作成画面に行く', new_user_path %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <%= link_to 'プロフィール画面に戻る', users_path %>
-<%= link_to 'マイページ編集画面に行く', new_user_path %>
