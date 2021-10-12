@@ -16,7 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name
       t.text :image
-      t.integer :gender, default: false, null: false
+      t.string :gender, default: false, null: false
       t.integer :administrative_divisions_of_japan
       t.integer :blood_type
       t.integer :constellation
