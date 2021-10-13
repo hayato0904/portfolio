@@ -61,12 +61,11 @@ ActiveRecord::Schema.define(version: 2021_10_06_164732) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "image"
-    t.string "gender", default: "f", null: false
-    t.integer "administrative_divisions_of_japan"
-    t.integer "blood_type"
-    t.integer "constellation"
+    t.string "gender"
+    t.string "administrative_divisions_of_japan"
+    t.string "blood_type"
+    t.string "constellation"
     t.string "self_lntroduction"
-    t.string "icon"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

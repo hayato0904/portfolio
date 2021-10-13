@@ -16,12 +16,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name
       t.text :image
-      t.string :gender, default: false, null: false
-      t.integer :administrative_divisions_of_japan
-      t.integer :blood_type
-      t.integer :constellation
+      t.string :gender
+      t.string :administrative_divisions_of_japan
+      t.string :blood_type
+      t.string :constellation
       t.string :self_lntroduction
-      t.string :icon
     end
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
