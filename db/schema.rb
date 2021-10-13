@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_102802) do
+ActiveRecord::Schema.define(version: 2021_10_06_164732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2021_09_15_102802) do
     t.datetime "updated_at", null: false
     t.index ["topick_id"], name: "index_favorites_on_topick_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "feeds", force: :cascade do |t|
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "topicks", force: :cascade do |t|
@@ -54,12 +60,12 @@ ActiveRecord::Schema.define(version: 2021_09_15_102802) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "gender", default: 0, null: false
-    t.integer "administrative_divisions_of_japan"
-    t.integer "blood_type"
-    t.integer "constellation"
+    t.text "image"
+    t.string "gender"
+    t.string "administrative_divisions_of_japan"
+    t.string "blood_type"
+    t.string "constellation"
     t.string "self_lntroduction"
-    t.string "icon"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

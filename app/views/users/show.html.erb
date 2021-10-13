@@ -1,0 +1,22 @@
+<h1>ユーザー詳細画面</h1>
+<p>名前: <%= @user.name %></p>
+
+<p id="notice"><%= notice %></p>
+<p>
+    <strong>ユーザーアイコン</strong>
+    <%= image_tag @user.image.url %>
+</p>
+
+<p>自己紹介: <%= @user.self_lntroduction %></p>
+
+<p>性別: <%= @user.gender %></p>
+
+<p>都道府県: <%= @user.administrative_divisions_of_japan %></p>
+
+<p>血液型: <%= @user.blood_type %></p>
+
+<p>星座: <%= @user.constellation %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+

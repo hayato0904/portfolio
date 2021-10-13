@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { in: 1..30 }
   validates :email, presence: true, length: { in: 1..255 }
+
+  mount_uploader :image, ImageUploader
+  
 end
