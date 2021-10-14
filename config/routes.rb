@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
-  get 'users/show'
   post '/tops/guest_sign_in', to: 'tops#guest_sign_in'
   post '/tops/admin_guest_sign_in', to: 'tops#admin_guest_sign_in'
   root to: 'tops#index'
   resources :favorites, only: [:create, :destroy, :index]
-  resources :users
-  get '/users', to: 'users#index'
-  # get '/users/show', to: 'users#show'  # 追加したけど違うかも
+  
+
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+
+  # usersのindex,create,new以外のルーティングを設定=====
+  resources :users, except: [:index, :create, :new, :destroy] # deviseのuserのアクションと自分が制作したuserのアクションでdestroyアクションで重なっていた。
+  # usersのindex,create,new以外のルーティングを設定=====
   devise_for :users
+  # topicksのルーティングを設定======
   get '/topicks', to: 'topicks#index'
+  # topicksのルーティングを設定======
 
   resources :topicks do
     collection do
@@ -22,3 +28,5 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 end
+
+

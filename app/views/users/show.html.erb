@@ -7,8 +7,6 @@
     <%= image_tag @user.image.url %>
 </p>
 
-<p>自己紹介: <%= @user.self_lntroduction %></p>
-
 <p>性別: <%= @user.gender %></p>
 
 <p>都道府県: <%= @user.administrative_divisions_of_japan %></p>
@@ -17,6 +15,7 @@
 
 <p>星座: <%= @user.constellation %></p>
 
+<p>自己紹介: <%= @user.self_lntroduction %></p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
 

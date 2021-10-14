@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # @user = User.new(current_user)
     @user = User.find(params[:id])
   end
 
@@ -23,14 +24,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  # def update
-  #   if @user.update(user_params)
-  #     redirect_to user_path, notice: "プロフィールを更新しました！"
-  #   else
-  #     render :edit
-  #   end
-  # end
 
   def edit
     @user = User.find(params[:id])
@@ -44,6 +37,12 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  # def destroy
+  #   # @user = User.find(params[:id])
+  #   # @user.destroy
+  # end
+
 
   private
   def user_params
