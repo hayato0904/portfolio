@@ -20,8 +20,6 @@ html {
     position: relative;/*←相対位置*/
 }
 
-
-
 footer {
     width: 100%;
     background-color:#b8ebf3;
@@ -32,4 +30,21 @@ footer {
     font-size: 8px;
     position: absolute;
     bottom: 0;
+}
+
+header {
+    height: 80px
+}
+
+header li {
+    font-size: 20px;
+}
+
+header li {
+    float: left;
+    width: auto;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #000000;
 }
