@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
   before_action :set_topick, only: [:create, :edit, :update]
   # コメントを保存、投稿するためのアクションです。
   def create
-    # コメントしているユーザーとログインしているユーザーid
-    @comment.user_id = current_user.id
     # Topickをパラメータの値から探し出し,Topickに紐づくcommentsとしてbuildします。
     @topick = Topick.find(params[:topick_id])
     @comment = @topick.comments.build(comment_params)
+    # コメントしているユーザーとログインしているユーザーid
+    @comment.user_id = current_user.id
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
