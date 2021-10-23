@@ -7,7 +7,7 @@
 <% end %>
 <p><%= notice %></p>
 <div class="main">
-<div class="alert alert-success" role="alert">Fellingにようこそ。まずは掲示板に投稿をしてみましょう。「新しく掲示板を投稿する」をクリックしてください。すべてはそこから始まります。</div>
+<div class="alert alert-success" role="alert">FLOATINGにようこそ。まずは掲示板に投稿をしてみましょう。「新しく掲示板を投稿する」をクリックしてください。すべてはそこから始まります。</div>
     <%= search_form_for @q, url: topicks_path do |f| %>
     <%= f.label :name, '名前を検索' %>
     <%= f.search_field :user_name_cont %> <br>
