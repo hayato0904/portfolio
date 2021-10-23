@@ -3,6 +3,9 @@
         <% if comment.id.present? %>
             <li>
                 <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
+                    <% if comment.user %>   
+                        <p><u><%= comment.user.name %></u></p>
+                    <% end %>
                     <p><%= comment.content %></p>
                     <% if current_user == topick.user %>
                         <p><%= link_to "コメント編集", edit_topick_comment_path(topick, comment), remote: true %></p>

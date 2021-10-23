@@ -1,11 +1,12 @@
 <h1>ユーザー詳細画面</h1>
 <p>名前: <%= @user.name %></p>
 
-<p id="notice"><%= notice %></p>
-<p>
-    <strong>ユーザーアイコン</strong>
-    <%= image_tag @user.image.url %>
-</p>
+<% if @user.image.present? %>
+    <p>
+        <strong>ユーザーアイコン</strong>
+        <%= image_tag @user.image.url %>
+    </p>
+<% end %>
 
 <p>性別: <%= @user.gender %></p>
 

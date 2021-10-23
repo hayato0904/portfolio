@@ -8,11 +8,12 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-
+  devise_for :users
+  
   # usersのindex,create,new以外のルーティングを設定=====
   resources :users, except: [:index, :create, :new, :destroy] # deviseのuserのアクションと自分が制作したuserのアクションでdestroyアクションで重なっていた。
   # usersのindex,create,new以外のルーティングを設定=====
-  devise_for :users
+
   # topicksのルーティングを設定======
   get '/topicks', to: 'topicks#index'
   # topicksのルーティングを設定======

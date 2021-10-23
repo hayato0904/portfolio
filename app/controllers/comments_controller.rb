@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
     # Topickをパラメータの値から探し出し,Topickに紐づくcommentsとしてbuildします。
     @topick = Topick.find(params[:topick_id])
     @comment = @topick.comments.build(comment_params)
+    # コメントしているユーザーとログインしているユーザーid
+    @comment.user_id = current_user.id
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
