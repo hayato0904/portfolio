@@ -95,6 +95,12 @@ footer {
 //     height: auto;
 // }
 
-// td {
-//     overflow-wrap: break-word;
-// }
+td {
+    overflow-wrap: break-word;
+    //一覧画面の文字が横にはみ出さないように改行をしているコードである。
+    vertical-align:middle;
+}
+
+th {
+    text-align:center;
+}
