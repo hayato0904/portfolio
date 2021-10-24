@@ -1,8 +1,5 @@
 class TopsController < ApplicationController
   def guest_sign_in
-    # 自分の==================
-    # user = User.find_or_create_by!(email: 'guest@example.com') do |user|
-    # ========================
     # ピーターの===============
     user = User.find_or_create_by!(name:'guest',email: 'guest@example.com') do |user|
     #========================
@@ -11,13 +8,12 @@ class TopsController < ApplicationController
       # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
     end
     sign_in user
-    redirect_to topicks_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to topicks_path
+    # , notice: 'ゲストユーザーとしてログインしました。'
+    # 上記2行は、なぜか「ゲストユーザーとしてログインしました」という文字が2つでるので、削除しておく。
   end
 
   def admin_guest_sign_in
-    # 自分の==================
-    # user = User.find_or_create_by!(email: 'adminguest@example.com', admin: 'true') do |user|
-    # ========================
     # ピーターの===============
     user = User.find_or_create_by!(name: 'admin',email: 'adminguest@example.com', admin: 'true') do |user|
     #========================
@@ -26,7 +22,9 @@ class TopsController < ApplicationController
       # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
     end
     sign_in user
-    redirect_to topicks_path, notice: '管理者ゲストユーザーとしてログインしました。'
+    redirect_to topicks_path
+    # , notice: '管理者ゲストユーザーとしてログインしました。'
+    # 上記2行は、なぜか「管理者ゲストユーザーとしてログインしました」という文字が2つでるので、削除しておく。
   end
 
 end
