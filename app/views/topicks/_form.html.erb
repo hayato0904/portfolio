@@ -1,6 +1,5 @@
 <%= form_with(model: @topick, local: true,url: choose_new_or_edit) do |form| %>
     <% if @topick.errors.any? %>
-    <%# <%= binding.pry %> %>
         <div id="error_explanation">
             <h2><%= @topick.errors.count %>件のエラーがあります。</h2>
         <ul>
@@ -12,7 +11,6 @@
     <% end %>
 
     <div class="topick_title form-group">
-        <%= form.label :content %>
         <%= form.text_area :content,class:"form-control",rows:"20",placeholder:"文字を入力してください" %>
     </div>
     <%# 検証ツールで作られたものを
