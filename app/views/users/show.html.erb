@@ -1,22 +1,46 @@
-<h1>ユーザー詳細画面</h1>
-<p>名前: <%= @user.name %></p>
+<h3>マイページ</h3>
+<div class="container">
 
-<% if @user.image.present? %>
-    <p>
-        <strong>ユーザーアイコン</strong>
-        <%= image_tag @user.image.url %>
-    </p>
-<% end %>
+    <table class = "table table-condensed">
 
-<p>性別: <%= @user.gender %></p>
+        <tr>
+            <td class = "info"><p>名前: <%= @user.name %></p></td>
+        </tr>
 
-<p>都道府県: <%= @user.administrative_divisions_of_japan %></p>
+        <tr>
+            <% if @user.image.present? %>
+                <td class = "info">
+                    <p>
+                        <strong>ユーザーアイコン</strong>
+                        <%= image_tag @user.image.url %>
+                    </p>
+                </td>
+            <% end %>
+        </tr>
 
-<p>血液型: <%= @user.blood_type %></p>
+        <tr>
+            <td class = "info"><p>性別: <%= @user.gender %></p></td>
+        </tr>
 
-<p>星座: <%= @user.constellation %></p>
+        <tr>
+            <td class = "info"><p>都道府県: <%= @user.administrative_divisions_of_japan %></p></td>
+        </tr>
 
-<p>自己紹介: <%= @user.self_lntroduction %></p>
+        <tr>
+            <td class = "info"><p>血液型: <%= @user.blood_type %></p></td>
+        </tr>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+        <tr>
+            <td class = "info"><p>星座: <%= @user.constellation %></p></td>
+        </tr>
+
+        <tr>
+            <td class = "info"><p>自己紹介: <%= @user.self_lntroduction %></p></td>
+        </tr>
+
+        <tr>
+            <td class = "info"><p><%= link_to 'Edit', edit_user_path(@user) %></p></td>
+        </tr>
+    </table>
+</div>
 
