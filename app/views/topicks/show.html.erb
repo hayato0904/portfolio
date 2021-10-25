@@ -1,18 +1,18 @@
-<h1>コメントする</h1>
+<h2>コメント画面</h2>
 <div class="container">
     <p id="notice"><%= notice %></p>
 
     <table class = "table table-condensed">
     <tr>
-        <th class= "active"> 
+        <th class= "info"> 
             <div class="topick-text">
-                <h2><strong>内容</strong>：<%= @topick.content %></h2>
+                <h3><strong>内容</strong>：<%= @topick.content %></h3>
             </div>
         </th>
     </tr>
 
     <tr>
-        <td class = "success">
+        <td class = "info">
             <div id="comments_area">
                 <!-- 投稿されたコメント一覧をトピックの詳細ページに表示するためのrender -->
                 <%= render partial: 'comments/index', locals: { comments: @comments, topick: @topick } %>
