@@ -43,10 +43,13 @@
 
         <% if topick.user.image.present? %> 
         <%# 上記一行は現在エラーが出ていない状態 %>
-    <p>
-    <td class = "info"><%= image_tag topick.user.image.url %></td>
+        <p>
+            <td class = "info"><%= image_tag topick.user.image.url %></td>
+
+        <% else %>
+            <td class = "info"><%= image_tag 'noimage.jpg'%></td>
         </p>
-<% end %>
+        <% end %>
 
         <td class = "info"><%= topick.content %></td>
         <td class = "info"><%= link_to '投稿にコメントする', topick_path(topick.id) %></td>
